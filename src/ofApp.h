@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxGui.h"
 
 class ofApp : public ofBaseApp{
 
@@ -21,13 +22,33 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
   
+  ofxPanel gui;
+  ofxFloatSlider radiusSlider;
+  ofxIntSlider gapSlider;
+  ofxIntSlider speedSlider;
+  ofxFloatSlider znoiseSlider;
+  ofxFloatSlider colornoiseSlider;
+  
+  ofxIntSlider alphaSlider;
+  
+  ofxColorSlider particleColorSlider;
+  
+  ofColor particle_color;
+  
+  ofxButton startstopButton;
+  ofxButton resetButton;
+  
+  bool start = false;
 
-  int width = 1200;
-  int height = 800;
+  void startstopButtonPressed();
+  void resetButtonPressed();
+
+  int width;
+  int height;
   
-  int gap = 5;
-  int particle_num = 100000;
   
+  
+
   vector<vector<float>> noise;
 
   float xstart;
@@ -36,20 +57,28 @@ class ofApp : public ofBaseApp{
   vector<vector<float>> xnoises;
   vector<vector<float>> ynoises;
   float znoise;
+  float znoise_add;
   
   vector<vector<ofVec2f>> field_vec;
-  
-  
-
 
   // particles
+
+  float radius;
+  
+  int gap;
+  int speed;
+  int particle_num;
+  
+  int alpha;
+  
+  float rednoise;
+  float greennoise;
+  float bluenoise;
+  
+  float color_noise_add;
   
   
-  float radius = 0.2;
-  
-//  vector<ofVec2f> particle_vec;
   vector<ofVec2f> particle_pos;
 
-  
 
 };

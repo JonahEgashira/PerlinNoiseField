@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<group>
+	<radius>0.5</radius>
+	<gap>69</gap>
+	<speed>2</speed>
+	<znoise>0.002</znoise>
+	<alpha>10</alpha>
+</group>
